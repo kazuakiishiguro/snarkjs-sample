@@ -2,6 +2,7 @@ node_modules
 *.ptau
 *_000*
 circuit*
+!circuits/
 *.json
 !package.json
 *.sol
