@@ -1,0 +1,8 @@
+node_modules
+*.ptau
+*_000*
+circuit*
+*.json
+!package.json
+*.sol
+*.wtns
