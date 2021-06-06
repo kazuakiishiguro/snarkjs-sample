@@ -120,10 +120,14 @@ npx snarkjs zkey export verificationkey $ZKEYFIN build/verification_key.json
 
 # calculate the witness
 cat <<EOT > build/input.json
-{"in": [1,1]}
+{"in": [10,10]}
 EOT
 
 npx snarkjs wtns calculate build/circuit.wasm build/input.json build/witness.wtns
+
+# export witness json
+npx snarkjs wtns export json $_ build/witness.json
+cat $_
 
 # debug the final witness calculation
 npx snarkjs wtns debug build/circuit.wasm build/input.json build/witness.wtns build/circuit.sym --trigger --get --set

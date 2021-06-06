@@ -110,9 +110,9 @@ blake2b-wasm@^1.1.0:
   dependencies:
     nanoassert "^1.0.0"
 
-"blake2b-wasm@https://github.com/jbaylina/blake2b-wasm.git":
+"blake2b-wasm@git+https://github.com/jbaylina/blake2b-wasm.git":
   version "2.1.0"
-  resolved "https://github.com/jbaylina/blake2b-wasm.git#0d5f024b212429c7f50a7f533aa3a2406b5b42b3"
+  resolved "git+https://github.com/jbaylina/blake2b-wasm.git#0d5f024b212429c7f50a7f533aa3a2406b5b42b3"
   dependencies:
     nanoassert "^1.0.0"
 
@@ -1056,10 +1056,10 @@ simple-get@^2.7.0:
     once "^1.3.1"
     simple-concat "^1.0.0"
 
-snarkjs@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/snarkjs/-/snarkjs-0.4.2.tgz#c3d154d5b9058d8b03a29c7b3776ac0c30d953e3"
-  integrity sha512-euONPb2Yj147j4AUlfbMSsLP6siwfGLfgCCHp+zPyAsgQrBg3GNyI4LDQXrLvzkYBO5+v3zZ5XH1xQo0UwoWCg==
+snarkjs@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/snarkjs/-/snarkjs-0.4.4.tgz#4a8c12873025b9d9d08529b91f238df62bd58f85"
+  integrity sha512-ucy/cy7s28CEGfbLFLhsnaRNde+gluJAoU2VxoJIyd8XF0TZ6mKzWmygWLxpVGJJ7cx6Uv8gIRlKCJXLpJmyuQ==
   dependencies:
     "@iden3/binfileutils" "0.0.8"
     blake2b-wasm "https://github.com/jbaylina/blake2b-wasm.git"
