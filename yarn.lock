@@ -1057,9 +1057,9 @@ simple-get@^2.7.0:
     simple-concat "^1.0.0"
 
 snarkjs@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/snarkjs/-/snarkjs-0.4.4.tgz#4a8c12873025b9d9d08529b91f238df62bd58f85"
-  integrity sha512-ucy/cy7s28CEGfbLFLhsnaRNde+gluJAoU2VxoJIyd8XF0TZ6mKzWmygWLxpVGJJ7cx6Uv8gIRlKCJXLpJmyuQ==
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/snarkjs/-/snarkjs-0.4.5.tgz#c7246b0bdcdafd25c67c0ecc395556715b059a14"
+  integrity sha512-rgxbp3JMhGdPgkhCrssq+a4Bv2vm2QucWwK9QG5cdyRRpx8f5EOpyMPy7pi/U8VUyyyulAaDowKBf7x7chB7zg==
   dependencies:
     "@iden3/binfileutils" "0.0.8"
     blake2b-wasm "https://github.com/jbaylina/blake2b-wasm.git"

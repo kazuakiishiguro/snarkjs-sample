@@ -11,28 +11,6 @@ fi
 
 mkdir -p ./build
 
-# if ls *.ptau >/dev/null 2>&1; then
-#     rm *.ptau
-# fi
-
-# if ls *_000* >/dev/null 2>&1; then
-#     rm *_000*
-# fi
-
-# if ls circuit* >/dev/null 2>&1; then
-#     rm circuit*
-# fi
-
-# if ls *.sol >/dev/null 2>&1; then
-#     rm *.sol
-# fi
-
-# if ls *.wtns >/dev/null 2>&1; then
-#     rm *.wtns
-# fi
-
-# ls *.json | grep -v -E 'package.json' | xargs rm
-
 PTAU=build/pot12_0000.ptau
 PTAU1=build/pot12_0001.ptau
 PTAU2=build/pot12_0002.ptau
@@ -72,31 +50,15 @@ npx snarkjs powersoftau verify $PTAUFIN
 
 # create the circuit
 cat <<EOT > build/circuit.circom
-template IsZero() {
-    signal input in;
-    signal output out;
+template Multiplier() {
+	 signal private input a;
+	 signal private input b;
+	 signal output c;
 
-    signal inv;
-
-    inv <-- in!=0 ? 1/in : 0;
-
-    out <== -in*inv +1;
-    in*out === 0;
+	 c <== a*b;
 }
 
-template IsEqual() {
-    signal input in[2];
-    signal output out;
-
-    component isz = IsZero();
-
-    in[1] - in[0] ==> isz.in;
-
-    isz.out ==> out;
-}
-
-
-component main = IsEqual();
+component main = Multiplier();
 EOT
 
 # compile the circuit
@@ -120,7 +82,7 @@ npx snarkjs zkey export verificationkey $ZKEYFIN build/verification_key.json
 
 # calculate the witness
 cat <<EOT > build/input.json
-{"in": [10,10]}
+{ "a": 3, "b": 11 }
 EOT
 
 npx snarkjs wtns calculate build/circuit.wasm build/input.json build/witness.wtns
